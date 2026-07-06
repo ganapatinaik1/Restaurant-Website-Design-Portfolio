@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krishna Kuteera | Authentic Vegetarian Restaurant — Manipal, Udupi</title>
+  <meta name="description" content="Krishna Kuteera is a celebrated vegetarian restaurant in Manipal, Udupi, offering authentic South and North Indian cuisine in a beautifully themed ambiance. Open daily till 10:30 PM." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      border-radius: 0 !important;
+    }
+
+    :root {
+      --gold:     #C8922A;
+      --gold-lt:  #E8B84B;
+      --gold-dk:  #9A6D1A;
+      --dark:     #0E0C09;
+      --dark2:    #1A160F;
+      --dark3:    #241E14;
+      --cream:    #F5EDD8;
+      --cream2:   #EDE0C4;
+      --text:     #2B2218;
+      --muted:    #7A6A54;
+      --white:    #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark);
+      color: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 60px;
+      background: rgba(14, 12, 9, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200, 146, 42, 0.2);
+      transition: background 0.3s;
+    }
+    nav.scrolled { background: rgba(14, 12, 9, 0.97); }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--gold-lt);
+    }
+    .nav-logo span { color: var(--cream); }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--cream2);
+      transition: color 0.25s;
+    }
+    .nav-links a:hover { color: var(--gold-lt); }
+
+    .nav-cta {
+      padding: 10px 24px;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-lt); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 680px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url("unnamed (1).webp") center center / cover no-repeat;
+      transform: scale(1.04);
+      transition: transform 8s ease-out;
+    }
+    .hero-bg.loaded { transform: scale(1); }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(14,12,9,0.96) 0%,
+        rgba(14,12,9,0.55) 45%,
+        rgba(14,12,9,0.15) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 60px 80px;
+      max-width: 800px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 6px 14px;
+      border: 1px solid var(--gold);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 7vw, 96px);
+      font-weight: 600;
+      line-height: 1.0;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--cream2);
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 36px;
+      opacity: 0.85;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      padding: 14px 36px;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); }
+
+    .btn-outline {
+      padding: 14px 36px;
+      background: transparent;
+      border: 1px solid rgba(200,146,42,0.6);
+      color: var(--cream);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .btn-outline:hover { border-color: var(--gold-lt); color: var(--gold-lt); }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--gold);
+      padding: 0 60px;
+      display: flex;
+      gap: 0;
+    }
+    .stat-item {
+      flex: 1;
+      padding: 20px 0;
+      text-align: center;
+      border-right: 1px solid rgba(14,12,9,0.2);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(14,12,9,0.65);
+    }
+
+    /* ── SECTION COMMONS ── */
+    section { overflow: hidden; }
+
+    .section-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 58px);
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--cream);
+    }
+
+    .section-title.dark-bg { color: var(--text); }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .about-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 580px;
+    }
+
+    .about-img {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .about-img:hover img { transform: scale(1.06); }
+
+    .about-img.tall { grid-row: 1 / 3; }
+
+    .about-content {
+      padding: 70px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--cream);
+    }
+
+    .about-content .section-title { color: var(--text); }
+
+    .about-text {
+      margin-top: 20px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .about-features {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .feature-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .feature-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ── MENU ── */
+    #menu {
+      background: var(--dark2);
+      padding: 90px 60px;
+    }
+
+    .menu-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 50px;
+    }
+
+    .menu-header-left { max-width: 500px; }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .menu-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+
+    .menu-item.wide {
+      grid-column: span 2;
+      aspect-ratio: 8/4;
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s ease;
+    }
+    .menu-item:hover img { transform: scale(1.08); }
+
+    .menu-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(14,12,9,0.88) 0%, transparent 55%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 22px;
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+    .menu-item:hover .menu-overlay { opacity: 1; }
+
+    .menu-item-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .menu-item-tag {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-top: 4px;
+    }
+
+    /* ── EXPERIENCE ── */
+    #experience {
+      background: var(--dark3);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px;
+    }
+
+    .exp-image {
+      overflow: hidden;
+    }
+    .exp-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .exp-image:hover img { transform: scale(1.04); }
+
+    .exp-content {
+      padding: 70px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .exp-text {
+      margin-top: 20px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: rgba(245, 237, 216, 0.6);
+    }
+
+    .amenities {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .amenity {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .amenity-name {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: var(--cream);
+    }
+    .amenity-desc {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .amenity-line {
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    /* ── INFO ── */
+    #info {
+      background: var(--cream);
+      padding: 90px 60px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2px;
+      margin-top: 50px;
+    }
+
+    .info-card {
+      background: var(--dark);
+      padding: 44px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .info-card-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .info-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.2;
+    }
+
+    .info-card-body {
+      font-size: 14px;
+      line-height: 1.8;
+      color: rgba(245, 237, 216, 0.6);
+    }
+
+    .info-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      text-decoration: none;
+      margin-top: 6px;
+      transition: gap 0.25s;
+    }
+    .info-card-link:hover { gap: 14px; }
+    .info-card-link::after { content: '→'; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(200,146,42,0.15);
+      padding: 40px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold-lt);
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-tagline {
+      font-size: 12px;
+      font-style: italic;
+      color: rgba(245,237,216,0.4);
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in-delay-1 { transition-delay: 0.1s; }
+    .fade-in-delay-2 { transition-delay: 0.2s; }
+    .fade-in-delay-3 { transition-delay: 0.3s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .hero-content { padding: 0 24px 60px; }
+      .stats-bar { padding: 0 24px; gap: 0; }
+      #about { grid-template-columns: 1fr; }
+      .about-images { height: 320px; }
+      .about-content { padding: 50px 24px; }
+      #menu { padding: 60px 24px; }
+      .menu-grid { grid-template-columns: 1fr 1fr; }
+      .menu-item.wide { grid-column: span 2; }
+      #experience { grid-template-columns: 1fr; }
+      .exp-image { height: 300px; }
+      .exp-content { padding: 50px 24px; }
+      #info { padding: 60px 24px; }
+      .info-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 30px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">Krishna <span>Kuteera</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#info">Visit Us</a></li>
+    </ul>
+    <a href="https://maps.app.goo.gl/krishnakuteera" class="nav-cta">Get Directions</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-badge">Pure Vegetarian · Manipal, Udupi</span>
+      <h1 class="hero-title">Krishna<br /><em>Kuteera</em></h1>
+      <p class="hero-sub">Where tradition meets taste. An iconic dining destination serving authentic South &amp; North Indian vegetarian cuisine in a beautifully crafted heritage setting.</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn-primary">Explore Menu</a>
+        <a href="#info" class="btn-outline">Visit Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-number">4.2★</span>
+      <span class="stat-label">Google Rating</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">1,500+</span>
+      <span class="stat-label">Reviews</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">₹200–400</span>
+      <span class="stat-label">Per Person</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">10:30 PM</span>
+      <span class="stat-label">Closes Daily</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-images">
+      <div class="about-img tall">
+        <img src="unnamed (2).webp" alt="Krishna Kuteera entrance with statue" loading="lazy" />
+      </div>
+      <div class="about-img">
+        <img src="unnamed.webp" alt="Krishna Kuteera restaurant exterior daytime" loading="lazy" />
+      </div>
+      <div class="about-img">
+        <img src="unnamed (3).webp" alt="Beautiful dining interior of Krishna Kuteera" loading="lazy" />
+      </div>
+    </div>
+    <div class="about-content">
+      <span class="section-label">Our Story</span>
+      <h2 class="section-title dark-bg" style="color:var(--text)">A Legacy of<br />Pure Vegetarian<br />Cuisine</h2>
+      <p class="about-text">
+        Nestled in the heart of Manipal, Krishna Kuteera is more than a restaurant — it is an experience. From the ornate entrance adorned with a majestic Krishna statue to the warmly lit art-deco interiors, every corner reflects our deep reverence for Indian heritage and flavour.
+      </p>
+      <p class="about-text" style="margin-top:12px;">
+        Our chefs craft every dish with the finest seasonal ingredients, honouring traditional recipes while embracing the diversity of Indian culinary art — from crisp South Indian breakfasts to hearty North Indian thalis.
+      </p>
+      <div class="about-features">
+        <div class="feature-row"><span class="feature-dot"></span> 100% Pure Vegetarian &amp; Vegan Options</div>
+        <div class="feature-row"><span class="feature-dot"></span> Outdoor Seating &amp; Free Wi-Fi</div>
+        <div class="feature-row"><span class="feature-dot"></span> Traditional South &amp; North Indian Cuisine</div>
+        <div class="feature-row"><span class="feature-dot"></span> Premium Themed Heritage Ambiance</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu">
+    <div class="menu-header fade-in">
+      <div class="menu-header-left">
+        <span class="section-label">Signature Dishes</span>
+        <h2 class="section-title">Crafted with<br />Heart &amp; Tradition</h2>
+      </div>
+      <p style="max-width:300px; font-size:14px; color:rgba(245,237,216,0.5); line-height:1.7;">
+        From street-style chaats to elaborate thalis — every plate is a celebration of Indian flavour.
+      </p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item wide fade-in">
+        <img src="Special North Indian Thali.webp" alt="Special North Indian Thali" loading="lazy" />
+        <div class="menu-overlay">
+          <div class="menu-item-name">Special North Indian Thali</div>
+          <div class="menu-item-tag">Chef's Favourite · Full Meal</div>
+        </div>
+      </div>
+      <div class="menu-item fade-in fade-in-delay-1">
+        <img src="Mysore Masala Dosa.webp" alt="Mysore Masala Dosa" loading="lazy" />
+        <div class="menu-overlay">
+          <div class="menu-item-name">Mysore Masala Dosa</div>
+          <div class="menu-item-tag">South Indian Classic</div>
+        </div>
+      </div>
+      <div class="menu-item fade-in fade-in-delay-1">
+        <img src="unnamed (4).webp" alt="Traditional South Indian Thali" loading="lazy" />
+        <div class="menu-overlay">
+          <div class="menu-item-name">South Indian Thali</div>
+          <div class="menu-item-tag">Complete Meal · House Special</div>
+        </div>
+      </div>
+      <div class="menu-item fade-in fade-in-delay-2">
+        <img src="Masala Roti.webp" alt="Masala Roti" loading="lazy" />
+        <div class="menu-overlay">
+          <div class="menu-item-name">Masala Roti</div>
+          <div class="menu-item-tag">North Indian Bread</div>
+        </div>
+      </div>
+      <div class="menu-item wide fade-in fade-in-delay-2">
+        <img src="Sev Dahi Batata Puri.webp" alt="Sev Dahi Batata Puri" loading="lazy" />
+        <div class="menu-overlay">
+          <div class="menu-item-name">Sev Dahi Batata Puri</div>
+          <div class="menu-item-tag">Street Snack · Chaat Corner</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="exp-image fade-in">
+      <img src="unnamed (3).webp" alt="Elegant dining room interior at Krishna Kuteera" loading="lazy" />
+    </div>
+    <div class="exp-content fade-in fade-in-delay-1">
+      <span class="section-label">The Ambiance</span>
+      <h2 class="section-title">Dine in Timeless<br />Elegance</h2>
+      <p class="exp-text">
+        Our dining rooms blend traditional Indian motifs with contemporary comfort. Wooden lattice panels, terracotta tones, and warm golden lighting create an atmosphere that is as beautiful as the food it serves.
+      </p>
+      <div class="amenities">
+        <div class="amenity">
+          <div class="amenity-line"></div>
+          <div class="amenity-name">Outdoor Seating</div>
+          <div class="amenity-desc">Open-air garden seating available</div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-line"></div>
+          <div class="amenity-name">Free Wi-Fi</div>
+          <div class="amenity-desc">High-speed internet throughout</div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-line"></div>
+          <div class="amenity-name">Vegan Options</div>
+          <div class="amenity-desc">Dedicated plant-based menu</div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-line"></div>
+          <div class="amenity-name">Family Friendly</div>
+          <div class="amenity-desc">Spacious seating for all groups</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section id="info">
+    <span class="section-label fade-in">Visit Us</span>
+    <h2 class="section-title fade-in" style="color:var(--text)">Find Us &amp;<br />Make It a Memory</h2>
+    <div class="info-grid">
+      <div class="info-card fade-in">
+        <div class="info-card-label">Location</div>
+        <div class="info-card-title">Manipal, Udupi</div>
+        <div class="info-card-body">8QWM+RPP, Ananth Nagar 1st Stage,<br />Manipal, Udupi,<br />Karnataka – 576 104</div>
+        <a href="https://maps.app.goo.gl/krishnakuteera" class="info-card-link">Open in Maps</a>
+      </div>
+      <div class="info-card fade-in fade-in-delay-1">
+        <div class="info-card-label">Hours</div>
+        <div class="info-card-title">Open Daily</div>
+        <div class="info-card-body">
+          We welcome guests every day of the week.<br /><br />
+          <strong style="color:var(--gold-lt);">Closes at 10:30 PM</strong><br />
+          <span style="color:rgba(245,237,216,0.4); font-size:12px;">Hours may vary on public holidays.</span>
+        </div>
+      </div>
+      <div class="info-card fade-in fade-in-delay-2">
+        <div class="info-card-label">Reservations &amp; Orders</div>
+        <div class="info-card-title">Order &amp; Dine</div>
+        <div class="info-card-body">Walk-ins welcome. Online ordering available through Google. For group bookings &amp; events, please call ahead.</div>
+        <a href="tel:+918000000000" class="info-card-link">Call Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Krishna Kuteera</div>
+    <div class="footer-copy">© 2026 Krishna Kuteera. All rights reserved.</div>
+    <div class="footer-tagline">"Pure food, pure soul."</div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Hero bg pan
+    const heroBg = document.getElementById('heroBg');
+    setTimeout(() => heroBg.classList.add('loaded'), 100);
+
+    // Intersection observer fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

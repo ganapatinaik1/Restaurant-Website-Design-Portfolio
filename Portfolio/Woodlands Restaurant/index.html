@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Woodlands Restaurant – Authentic Vegetarian Dining, Udupi</title>
+  <meta name="description" content="Woodlands Restaurant in Udupi offers authentic South Indian and North Indian vegetarian cuisine. All you can eat options, vegan-friendly, and family seating. Rated 4.4 ★ with 14,000+ reviews." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-w">W</span>oodlands
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" id="nav-about">About</a></li>
+      <li><a href="#menu" id="nav-menu">Menu</a></li>
+      <li><a href="#gallery" id="nav-gallery">Gallery</a></li>
+      <li><a href="#contact" id="nav-contact">Contact</a></li>
+    </ul>
+    <a href="tel:09590176333" class="nav-cta" id="nav-reserve">Call to Reserve</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="unnamed (1).webp" alt="Woodlands Restaurant interior" class="hero-bg-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tag">Pure Vegetarian · Udupi, Karnataka</p>
+      <h1 class="hero-title">
+        Woodlands<br /><em>Restaurant</em>
+      </h1>
+      <p class="hero-subtitle">A legacy of flavour since decades — South Indian classics, North Indian feasts & everything in between.</p>
+      <div class="hero-badges">
+        <span class="badge">⭐ 4.4 · 14 K Reviews</span>
+        <span class="badge">🥗 All You Can Eat</span>
+        <span class="badge">🌿 Vegan Options</span>
+      </div>
+      <div class="hero-cta-group">
+        <a href="#menu" class="btn btn-primary" id="hero-view-menu">View Menu</a>
+        <a href="https://maps.app.goo.gl/udupi" class="btn btn-outline" id="hero-directions" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <!-- ========== STATS BAR ========== -->
+  <section class="stats-bar">
+    <div class="stat">
+      <span class="stat-num">4.4★</span>
+      <span class="stat-label">Google Rating</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">14K+</span>
+      <span class="stat-label">Happy Reviews</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">₹200–400</span>
+      <span class="stat-label">Per Person</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Vegetarian</span>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about section" id="about">
+    <div class="container about-grid">
+      <div class="about-images">
+        <img src="unnamed (2).webp" alt="Woodlands Restaurant dining hall" class="about-img-main reveal" />
+        <img src="unnamed.webp" alt="Woodlands Restaurant frontage at night" class="about-img-secondary reveal" />
+      </div>
+      <div class="about-text reveal">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title">A Tradition of <em>Pure Taste</em></h2>
+        <p class="about-desc">
+          Nestled in the heart of Udupi, Woodlands Restaurant has been a cherished destination for those who seek authentic, wholesome vegetarian cuisine. Our kitchen honours time-tested recipes — from crispy South Indian dosas to luscious North Indian curries — all prepared fresh, every day.
+        </p>
+        <p class="about-desc">
+          With warm wooden interiors, attentive service and a menu that spans snacks, thalis, Indo-Chinese and indulgent desserts, every visit feels like a celebration.
+        </p>
+        <ul class="about-features">
+          <li><span class="check">✓</span> All You Can Eat Thalis</li>
+          <li><span class="check">✓</span> Vegan & Jain Friendly Options</li>
+          <li><span class="check">✓</span> High Chairs Available</li>
+          <li><span class="check">✓</span> No Onion / No Garlic on Request</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" id="about-visit-us">Visit Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MENU HIGHLIGHTS ========== -->
+  <section class="menu section" id="menu">
+    <div class="container">
+      <p class="section-eyebrow centered">What We Serve</p>
+      <h2 class="section-title centered">Signature <em>Delights</em></h2>
+      <p class="section-sub centered">A glimpse of our most-loved dishes — from morning breakfast to late-night dinner.</p>
+
+      <!-- Category tabs -->
+      <div class="menu-tabs" role="tablist">
+        <button class="tab active" data-tab="south" id="tab-south" role="tab" aria-selected="true">South Indian</button>
+        <button class="tab" data-tab="north" id="tab-north" role="tab" aria-selected="false">North Indian</button>
+        <button class="tab" data-tab="beverages" id="tab-beverages" role="tab" aria-selected="false">Beverages &amp; Sweets</button>
+      </div>
+
+      <!-- South Indian -->
+      <div class="menu-grid tab-content active" id="tab-south-content">
+        <article class="menu-card reveal">
+          <div class="menu-img-wrap">
+            <img src="Masala Dosa.webp" alt="Masala Dosa at Woodlands Restaurant" loading="lazy" />
+            <span class="menu-tag veg">🌿 Veg</span>
+          </div>
+          <div class="menu-info">
+            <h3>Masala Dosa</h3>
+            <p>Golden crispy dosa stuffed with spiced potato — served with sambar &amp; chutneys.</p>
+            <span class="menu-price">₹ 85</span>
+          </div>
+        </article>
+        <article class="menu-card reveal">
+          <div class="menu-img-wrap">
+            <img src="South Indian Thali.webp" alt="South Indian Thali at Woodlands Restaurant" loading="lazy" />
+            <span class="menu-tag veg">🌿 Veg</span>
+          </div>
+          <div class="menu-info">
+            <h3>South Indian Thali</h3>
+            <p>Unlimited rice, sambar, rasam, 3 curries, papad &amp; sweet — a complete meal.</p>
+            <span class="menu-price">₹ 155+</span>
+          </div>
+        </article>
+        <article class="menu-card reveal">
+          <div class="menu-img-wrap">
+            <img src="unnamed (6).webp" alt="Neer Dosa at Woodlands Restaurant" loading="lazy" />
+            <span class="menu-tag veg">🌿 Veg</span>
+          </div>
+          <div class="menu-info">
+            <h3>Neer Dosa</h3>
+            <p>Soft, lace-thin rice dosa — a Coastal Karnataka delicacy served with coconut chutney.</p>
+            <span class="menu-price">₹ 95</span>
+          </div>
+        </article>
+        <article class="menu-card reveal">
+          <div class="menu-img-wrap">
+            <img src="Tomato Soup.webp" alt="Tomato Soup at Woodlands Restaurant" loading="lazy" />
+            <span class="menu-tag veg">🌿 Veg</span>
+          </div>
+          <div class="menu-info">
+            <h3>Tomato Soup</h3>
+            <p>Velvety fresh tomato soup, perfectly spiced — served hot as a comforting starter.</p>
+            <span class="menu-price">₹ 100</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- North Indian -->
+      <div class="menu-grid tab-content" id="tab-north-content">
+        <article class="menu-card reveal">
+          <div class="menu-img-wrap">
+            <img src="Gobi Manchurian.webp" alt="Gobi Manchurian at Woodlands Restaurant" loading="lazy" />
+            <span class="menu-tag veg">🌿 Veg</span>
+          </div>
+          <div class="menu-info">
+            <h3>Gobi Manchurian</h3>
+            <p>Crispy cauliflower florets tossed in a tangy, spicy Indo-Chinese sauce.</p>
+            <span class="menu-price">₹ 185</span>
+          </div>
+        </article>
+        <article class="menu-card reveal">
+          <div class="menu-img-wrap">
+            <img src="Masala Papad.webp" alt="Masala Papad at Woodlands Restaurant" loading="lazy" />
+            <span class="menu-tag veg">🌿 Veg</span>
+          </div>
+          <div class="menu-info">
+            <h3>Masala Papad</h3>
+            <p>Roasted papad topped with fresh onions, tomato, coriander and chaat masala.</p>
+            <span class="menu-price">₹ 60</span>
+          </div>
+        </article>
+        <article class="menu-card reveal">
+          <div class="menu-img-wrap">
+            <img src="unnamed (4).webp" alt="Paneer dishes at Woodlands Restaurant" loading="lazy" />
+            <span class="menu-tag veg">🌿 Veg</span>
+          </div>
+          <div class="menu-info">
+            <h3>Paneer Tikka Masala</h3>
+            <p>Tender paneer cubes in a rich, aromatic tikka masala gravy — a crowd favourite.</p>
+            <span class="menu-price">₹ 280</span>
+          </div>
+        </article>
+        <article class="menu-card reveal">
+          <div class="menu-img-wrap">
+            <img src="unnamed (3).webp" alt="North Indian menu at Woodlands Restaurant" loading="lazy" />
+            <span class="menu-tag veg">🌿 Veg</span>
+          </div>
+          <div class="menu-info">
+            <h3>Garlic Naan</h3>
+            <p>Pillowy soft naan brushed with butter and garlic — best paired with rich curries.</p>
+            <span class="menu-price">₹ 70</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Beverages -->
+      <div class="menu-grid tab-content" id="tab-beverages-content">
+        <article class="menu-card reveal">
+          <div class="menu-img-wrap">
+            <img src="Filter Coffee.webp" alt="Filter Coffee at Woodlands Restaurant" loading="lazy" />
+            <span class="menu-tag veg">☕ Hot</span>
+          </div>
+          <div class="menu-info">
+            <h3>Filter Coffee</h3>
+            <p>South India's soul in a glass — frothy, aromatic, perfectly brewed filter coffee.</p>
+            <span class="menu-price">₹ 28</span>
+          </div>
+        </article>
+        <article class="menu-card reveal">
+          <div class="menu-img-wrap">
+            <img src="Mini Gudbud Ice Cream.webp" alt="Mini Gudbud Ice Cream at Woodlands Restaurant" loading="lazy" />
+            <span class="menu-tag veg">🍦 Dessert</span>
+          </div>
+          <div class="menu-info">
+            <h3>Mini Gudbud Ice Cream</h3>
+            <p>A coastal classic — layered ice cream with fruits, nuts and a burst of flavours.</p>
+            <span class="menu-price">₹ 135</span>
+          </div>
+        </article>
+        <article class="menu-card reveal">
+          <div class="menu-img-wrap">
+            <img src="Masala Papad.webp" alt="Fresh Juice at Woodlands Restaurant" loading="lazy" />
+            <span class="menu-tag veg">🥤 Cold</span>
+          </div>
+          <div class="menu-info">
+            <h3>Fresh Juice (Seasonal)</h3>
+            <p>Watermelon, Grape, Pineapple, Mango — freshly squeezed seasonal fruit juices.</p>
+            <span class="menu-price">₹ 105+</span>
+          </div>
+        </article>
+        <article class="menu-card reveal">
+          <div class="menu-img-wrap">
+            <img src="South Indian Thali.webp" alt="Pineapple Kesari at Woodlands Restaurant" loading="lazy" />
+            <span class="menu-tag veg">🍮 Sweet</span>
+          </div>
+          <div class="menu-info">
+            <h3>Pineapple Kesari Bath</h3>
+            <p>Classic South Indian semolina dessert scented with saffron and fresh pineapple.</p>
+            <span class="menu-price">₹ 80</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <p class="section-eyebrow centered">Inside Woodlands</p>
+      <h2 class="section-title centered">Taste The <em>Atmosphere</em></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal tall">
+        <img src="unnamed (2).webp" alt="Woodlands Restaurant main dining area" loading="lazy" />
+        <div class="gallery-overlay"><span>Dining Hall</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="Masala Dosa.webp" alt="Crispy Masala Dosa served at Woodlands" loading="lazy" />
+        <div class="gallery-overlay"><span>Masala Dosa</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="Filter Coffee.webp" alt="Filter coffee served at Woodlands Restaurant" loading="lazy" />
+        <div class="gallery-overlay"><span>Filter Coffee</span></div>
+      </div>
+      <div class="gallery-item reveal wide">
+        <img src="unnamed (1).webp" alt="Woodlands Restaurant full dining hall view" loading="lazy" />
+        <div class="gallery-overlay"><span>The Hall</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="Mini Gudbud Ice Cream.webp" alt="Mini Gudbud Ice Cream at Woodlands Restaurant" loading="lazy" />
+        <div class="gallery-overlay"><span>Mini Gudbud</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="Gobi Manchurian.webp" alt="Gobi Manchurian at Woodlands Restaurant" loading="lazy" />
+        <div class="gallery-overlay"><span>Gobi Manchurian</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="unnamed.webp" alt="Woodlands Restaurant exterior at night" loading="lazy" />
+        <div class="gallery-overlay"><span>Our Frontage</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="South Indian Thali.webp" alt="South Indian Thali at Woodlands Restaurant" loading="lazy" />
+        <div class="gallery-overlay"><span>South Indian Thali</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info reveal">
+        <p class="section-eyebrow">Find Us</p>
+        <h2 class="section-title">Come <em>Visit</em></h2>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div>
+            <strong>Address</strong>
+            <p>Dr. U. R. RAO Complex, near Udupi Sri Krishna Matha,<br />Thenkapet, Udupi, Karnataka – 576 101</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <div>
+            <strong>Phone</strong>
+            <p><a href="tel:09590176333" id="contact-phone">095901 76333</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🕐</span>
+          <div>
+            <strong>Hours</strong>
+            <p>Breakfast: 8:30 AM – 11:30 AM<br />
+               Lunch: 12:00 Noon – 3:15 PM<br />
+               Dinner: 6:30 PM – 10:30 PM</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">💵</span>
+          <div>
+            <strong>Price Range</strong>
+            <p>₹200 – ₹400 per person (incl. 5% GST)</p>
+          </div>
+        </div>
+        <div class="cta-buttons">
+          <a href="tel:09590176333" class="btn btn-primary" id="contact-call">Call Now</a>
+          <a href="https://maps.google.com/?q=Woodlands+Restaurant+Udupi" class="btn btn-outline" id="contact-map" target="_blank" rel="noopener">Open in Maps</a>
+        </div>
+      </div>
+      <div class="map-embed reveal">
+        <iframe
+          title="Woodlands Restaurant Location Map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3883.5408953088!2d74.74726357505695!3d13.341043987063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbca4ade1572e35%3A0x3f96f39a5f2e56fb!2sWoodlands%20Restaurant!5e0!3m2!1sen!2sin!4v1719285600000!5m2!1sen!2sin"
+          width="100%"
+          height="400"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-w">W</span>oodlands Restaurant
+        <p>Pure Vegetarian · Udupi, Karnataka</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="footer-copy">© 2025 Woodlands Restaurant. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
